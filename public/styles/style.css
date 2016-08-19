@@ -1,0 +1,116 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+        url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+        url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+a {
+    text-decoration: none;
+}
+.cl-drawer__header {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    height: 151px;
+    padding: 16px;
+    background-color: rgb(3,169,244);
+}
+.cl-login {
+}
+.cl-user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+}
+.cl-user-username {
+    font-weight: bold;
+}
+.mdl-layout__drawer-button {
+    outline: 0;
+    -webkit-appearance: none;
+}
+.cl-contact-dropdown {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+.mdl-menu__item a {
+    display: block;
+    color: rgba(0,0,0,0.87);
+    font-weight: bold;
+}
+.mdl-menu__item a i {
+    margin-right: 16px;
+    vertical-align: middle;
+    color: rgba(0,0,0,0.54);
+}
+.mdl-navigation__link {
+    padding: 16px !important;
+    color: rgba(0,0,0,0.87) !important;
+    font-weight: bold;
+}
+.mdl-navigation__link i {
+    margin-right: 32px;
+    color: rgba(0,0,0,0.54);
+}
+.page-content {
+    max-width: 640px;
+    margin: 40px auto;
+}
+.cl-session {
+    padding: 0;
+}
+.cl-session-title {
+    margin: 24px 0;
+    font-size: 24px;
+    line-height: 32px;
+}
+.cl-session-content {
+    width: 100%;
+    padding: 8px;
+}
+.cl-form .mdl-textfield{
+    width: 100%;
+}
+.cl-radio-title {
+    margin-right: 8px;
+    color: #c3c3c3;
+}
+.cl-form .mdl-button {
+    margin-right: 16px;
+}
+@media (max-width: 600px) {
+    .page-content {
+        margin: 0 auto;
+    }
+    .cl-session {
+        padding: 16px;
+    }
+    .cl-session-title {
+        margin: 0 0 16px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

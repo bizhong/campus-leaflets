@@ -1,0 +1,21 @@
+<% include ../header.html %>
+                    <section class="mdl-grid cl-session">
+                        <h1 class="cl-session-title">登录</h1>
+                        <div class="cl-session-content mdl-color--white mdl-shadow--2dp">
+                            <form class="cl-form mdl-cell mdl-cell--12-col" action="/doLogin/" method="POST">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" name="emailusername" autofocus id="emailusername">
+                                    <label class="mdl-textfield__label" for="emailusername">电子邮箱或者用户名</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="password" name="password" id="password">
+                                    <label class="mdl-textfield__label" for="password">密码</label>
+                                </div>
+                                <p>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">登录</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="reset">重置</button>
+                                </p>
+                            </form>
+                        </div>
+                    </section>
+<% include ../footer.html %>

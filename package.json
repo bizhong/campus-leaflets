@@ -1,0 +1,32 @@
+{
+  "name": "campus-leaflets",
+  "version": "1.0.0",
+  "description": "Campus Leaflets is a Node App for college students on South-Center University For Nationalities to get leaflets information.",
+  "main": "app.js",
+  "repository": "https://github.com/basfed/campus-leaflets.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "MongoDB",
+    "Koa",
+    "EJS",
+    "MDL"
+  ],
+  "author": "Bizhong Lan",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "fs": "0.0.2",
+    "koa": "^1.2.1",
+    "koa-body": "^1.4.0",
+    "koa-ejs": "^3.0.0",
+    "koa-router": "^5.4.0",
+    "koa-session": "^3.3.1",
+    "koa-static": "^2.0.0",
+    "mongoose": "^4.5.8",
+    "nodemailer": "^2.5.0",
+    "path": "^0.12.7"
+  }
+}

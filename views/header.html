@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+        <title><%=title %> - 校园传单</title>
+        <meta name="keywords" content="校园传单, Campus Leaflets, campus leaflets">
+        <meta name="description" content="校园传单（Campus Leaflets）为中南民族大学在校大学生快速获取传单信息。">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="author" content="兰必钟（Bizhong Lan）, http://www.basfed.com">
+        <meta name="robots" content="index, follow">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/styles/material.min.css">
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header mdl-color--white">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title"><%=title %></span>
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                            <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer mdl-color--white">
+                <header class="cl-drawer__header mdl-color-text--white">
+                    <!-- <a class="cl-login" href="/login/">登录</a> -->
+                    <img class="cl-user-avatar" src="/upload/avatars/user.jpg">
+                    <span class="cl-user-username">Basfed Lan</span>
+                    <div class="cl-contact-dropdown">
+                        <span>basfedlan@gmail.com</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                            <i class="material-icons" role="presentation">arrow_drop_down</i>
+                            <span class="visuallyhidden">Accounts</span>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                            <li class="mdl-menu__item">
+                                <a href="/personal/"><i class="material-icons">person</i>个人信息</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                                <a href="/logout/"><i class="material-icons">undo</i>退出登录</a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="/"><i class="material-icons">home</i>首页</a>
+                    <a class="mdl-navigation__link" href="/corporation/register/"><i class="material-icons">group_add</i>单位注册</a>
+                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">person_add</i>用户注册</a>
+
+                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">verified_user</i>审核单位</a>
+                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">people</i>用户管理</a>
+
+                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">create</i>发布传单</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content mdl-color--grey-50">
+                <div class="page-content">
