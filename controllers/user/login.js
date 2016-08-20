@@ -11,9 +11,6 @@ module.exports={
         try {
             var user = this.request.body;
 
-            // 密码加密
-            user.password = User.passwordEncrypt(user.password);
-
             // 验证登录
             User.verifyLogin(user);
         } catch(e) {

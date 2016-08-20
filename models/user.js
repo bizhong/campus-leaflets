@@ -37,8 +37,8 @@ UserSchema.statics = {
 
         if (result.state === '已登录') {// 查找结果中的用户状态为“已登录”，不能再次登录
             this.body = '该用户已登录。';
-        } else {// 查找结果中的用户密码与用户输入密码一致，登录成功
-            if (password === result.password) {
+        } else {
+            if (bcrypt.compareSync(password, result.password)) {// 查找结果中的用户密码与用户输入密码一致，登录成功
                 this.session.ID = result._id;
                 this.session.AVATAR = result.avatar;
                 this.session.USERNAME = result.username;
