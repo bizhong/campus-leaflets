@@ -21,7 +21,7 @@ var UserSchema = new mongoose.Schema({
         default: '男'
     },
     tel: Number,// 手机号码或电话号码
-    belong: {// 身份（学生，公司，社团，实验室，管理员）
+    belong: {// 身份（学生，社团，部门，团队，公司，管理员）
         type: String,
         default: '学生'
     },

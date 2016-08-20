@@ -11,9 +11,9 @@ var CorporationSchema = new mongoose.Schema({
         unique: true,
         type: String
     },
-    belong: {// 属性（公司，社团，实验室）
+    belong: {// 身份（社团，部门，团队，公司）
         type: String,
-        default: '公司'
+        default: '社团'
     },
     email: {// 电子邮件
         unique: true,

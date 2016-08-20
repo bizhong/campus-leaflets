@@ -1,52 +1,53 @@
 <% include ../header.html %>
-                    <section class="mdl-grid cl-session">
-                        <h1 class="cl-session-title">单位注册</h1>
-                        <div class="cl-session-content mdl-color--white mdl-shadow--2dp">
-                            <form class="cl-form mdl-cell mdl-cell--12-col" action="/doRegister/" method="POST">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" name="name" autofocus id="name">
-                                    <label class="mdl-textfield__label" for="name">单位名称</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <span class="cl-radio-title">身份</span>
-                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-1">
-                                        <input type="radio" id="bl-option-1" class="mdl-radio__button" name="belong" value="社团">
-                                        <span class="mdl-radio__label">社团</span>
-                                    </label>
-                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-2">
-                                        <input type="radio" id="bl-option-2" class="mdl-radio__button" name="belong" value="实验室">
-                                        <span class="mdl-radio__label">实验室</span>
-                                    </label>
-                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-3">
-                                        <input type="radio" id="bl-option-3" class="mdl-radio__button" name="belong" value="公司">
-                                        <span class="mdl-radio__label">公司</span>
-                                    </label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="email" name="email" id="email">
-                                    <label class="mdl-textfield__label" for="email">电子邮件</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="tel" name="tel" id="tel">
-                                    <label class="mdl-textfield__label" for="tel">手机号码或电话号码</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="url" name="url" id="url">
-                                    <label class="mdl-textfield__label" for="url">网址</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" name="address" id="address">
-                                    <label class="mdl-textfield__label" for="address">地址</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <textarea class="mdl-textfield__input" type="text" name="introduction" rows="5" id="introduction"></textarea>
-                                    <label class="mdl-textfield__label" for="introduction">介绍</label>
-                                </div>
-                                <p>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">注册</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="reset">重置</button>
-                                </p>
-                            </form>
-                        </div>
+                    <section class="mdl-grid mdl-grid--no-spacing">
+                        <form class="cl-form mdl-cell mdl-cell--12-col mdl-shadow--2dp" action="/doRegister/" method="POST">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" name="name" autofocus id="name">
+                                <label class="mdl-textfield__label" for="name">单位名称</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <span class="cl-radio-title">身份</span>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-1">
+                                    <input type="radio" id="bl-option-1" class="mdl-radio__button" name="belong" value="社团">
+                                    <span class="mdl-radio__label">社团</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-2">
+                                    <input type="radio" id="bl-option-2" class="mdl-radio__button" name="belong" value="部门">
+                                    <span class="mdl-radio__label">部门</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-3">
+                                    <input type="radio" id="bl-option-3" class="mdl-radio__button" name="belong" value="团队">
+                                    <span class="mdl-radio__label">团队</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-4">
+                                    <input type="radio" id="bl-option-4" class="mdl-radio__button" name="belong" value="公司">
+                                    <span class="mdl-radio__label">公司</span>
+                                </label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="email" name="email" id="email">
+                                <label class="mdl-textfield__label" for="email">电子邮件</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="tel" name="tel" id="tel">
+                                <label class="mdl-textfield__label" for="tel">手机号码或电话号码</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="url" name="url" id="url">
+                                <label class="mdl-textfield__label" for="url">网址</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" name="address" id="address">
+                                <label class="mdl-textfield__label" for="address">地址</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <textarea class="mdl-textfield__input" type="text" name="introduction" rows="5" id="introduction"></textarea>
+                                <label class="mdl-textfield__label" for="introduction">介绍</label>
+                            </div>
+                            <p>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">注册</button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="reset">重置</button>
+                            </p>
+                        </form>
                     </section>
 <% include ../footer.html %>

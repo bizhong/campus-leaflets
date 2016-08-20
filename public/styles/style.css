@@ -12,6 +12,7 @@
 }
 a {
     text-decoration: none;
+    color: rgb(68,138,255);
 }
 .cl-drawer__header {
     box-sizing: border-box;
@@ -29,12 +30,20 @@ a {
     background-color: rgb(3,169,244);
 }
 .cl-login {
+    font-weight: bold;
+    line-height: 29px;
+    color: #fff;
+}
+.cl-login i {
+    margin-right: 32px;
+    vertical-align: middle;
 }
 .cl-user-avatar {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
     margin-bottom: 24px;
+    border-radius: 50%;
+    background-color: #757575;
 }
 .cl-user-username {
     font-weight: bold;
@@ -58,40 +67,52 @@ a {
 }
 .mdl-menu__item a {
     display: block;
-    color: rgba(0,0,0,0.87);
+    color: rgba(0,0,0,.87);
     font-weight: bold;
 }
 .mdl-menu__item a i {
     margin-right: 16px;
     vertical-align: middle;
-    color: rgba(0,0,0,0.54);
+    color: rgba(0,0,0,.54);
 }
 .mdl-navigation__link {
     padding: 16px !important;
-    color: rgba(0,0,0,0.87) !important;
+    color: rgba(0,0,0,.87) !important;
     font-weight: bold;
 }
 .mdl-navigation__link i {
     margin-right: 32px;
-    color: rgba(0,0,0,0.54);
+    color: rgba(0,0,0,.54);
 }
 .page-content {
-    max-width: 640px;
-    margin: 40px auto;
+    max-width: 600px;
+    margin: 60px auto;
 }
-.cl-session {
+.cl-card-wide {
+    width: 100%;
+    margin-bottom: 60px;
+}
+.cl-list__item {
+    height: 40px;
+    min-height: 40px;
     padding: 0;
 }
-.cl-session-title {
-    margin: 24px 0;
-    font-size: 24px;
-    line-height: 32px;
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+    height: 40px;
 }
-.cl-session-content {
+.cl-card__title {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.mdl-card__media {
     width: 100%;
-    padding: 8px;
+    background-color: #edeeee;
 }
-.cl-form .mdl-textfield{
+.cl-form {
+    padding: 16px;
+    background: #fff;
+}
+.cl-form .mdl-textfield {
     width: 100%;
 }
 .cl-radio-title {
@@ -101,16 +122,13 @@ a {
 .cl-form .mdl-button {
     margin-right: 16px;
 }
-@media (max-width: 600px) {
+@media screen and (min-width: 1025px) {
+    .mdl-layout__drawer-button {
+         line-height: 52px; 
+    }
+}
+@media (max-width: 599px) {
     .page-content {
-        margin: 0 auto;
-    }
-    .cl-session {
-        padding: 16px;
-    }
-    .cl-session-title {
-        margin: 0 0 16px;
-        font-size: 20px;
-        line-height: 24px;
+        margin: 16px auto;
     }
 }
