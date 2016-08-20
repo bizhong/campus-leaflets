@@ -9,10 +9,13 @@ module.exports={
     },
     doLogin: function *() {
         try {
-            console.log(this.request.body);
-            // JSON.stringify() 方法可以将任意的 JavaScript 值序列化成 JSON 字符串
-            this.body = JSON.stringify(this.request.body, null, 2);
-            // this.redirect('/');
+            var user = this.request.body;
+
+            // 密码加密
+            user.password = User.passwordEncrypt(user.password);
+
+            // 验证登录
+            User.verifyLogin(user);
         } catch(e) {
             this.body = "注册失败";
             console.log(e);
