@@ -11,8 +11,13 @@ module.exports={
         try {
             var user = this.request.body;
 
-            // 验证登录
-            User.verifyLogin(user);
+            if (!user.emailusername && !user.password) {// 电子邮箱（用户名）和密码都为空
+                // 重定向到登录页面
+                this.redirect('/login/');
+            } else {
+                // 验证登录
+                User.verifyLogin(user);
+            }
         } catch(e) {
             this.body = "注册失败";
             console.log(e);

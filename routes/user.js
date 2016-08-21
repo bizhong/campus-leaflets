@@ -10,7 +10,7 @@ module.exports = function (router) {
     // 首页
     router.get('/', userIndex.index);
 
-    // 注册（学生注册）
+    // 学生注册
     router.get('/register/', userRegister.register);
     router.post('/doRegister/', body, userRegister.doRegister);
 

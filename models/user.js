@@ -3,15 +3,19 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
 // 定义用户模式
-var UserSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
+
+var UserSchema = new Schema({
     avatar: { type: String, default: '/upload/avatars/avatar.png' },// 头像
     email: { unique: true, type: String },// 电子邮件
     username: { unique: true, type: String },// 用户名
     sex: { type: String, default: '男' },// 性别
     tel: Number,// 手机号码或电话号码
-    belong: { type: String, default: '学生' },// 身份（学生，社团，部门，团队，公司，管理员）
+    belong: { type: String, default: '学生' },// 身份（学生，社团，部门，团队，商店，公司，管理员）
     password: String,// 密码
-    state: { type: String, default: '已登录' }// 状态（已登录，未登录）
+    state: { type: String, default: '已登录' },// 状态（已登录，未登录）
+    collections: [{type: ObjectId, ref: 'Leaflet'}]// 收藏的传单
 });
 // 定义用户实例方法
 UserSchema.methods = {};
@@ -41,11 +45,17 @@ UserSchema.statics = {
             if (bcrypt.compareSync(password, result.password)) {// 查找结果中的用户密码与用户输入密码一致，登录成功
                 this.session.ID = result._id;
                 this.session.AVATAR = result.avatar;
+                this.session.EMAIL = result.email;
                 this.session.USERNAME = result.username;
                 this.session.BELONG = result.belong;
 
-                // 重定向到首页
-                this.redirect('/');
+                if (result.belong === '学生') {
+                    this.redirect('/');// 重定向到首页
+                } else if (result.belong === '管理员') {
+                    this.redirect('/admin/');// 重定向到管理员首页
+                } else {
+                    this.redirect('/corporation/');// 重定向到单位首页
+                }
             } else {
                 // 重定向到登录页面
                 this.redirect('/login/');
