@@ -1,6 +1,6 @@
 <% include ../header.html %>
                     <section class="mdl-grid mdl-grid--no-spacing">
-                        <form class="cl-form mdl-cell mdl-cell--12-col mdl-shadow--2dp" action="/doRegister/" method="POST">
+                        <form class="cl-form mdl-cell mdl-cell--12-col mdl-shadow--2dp" action="/corporation/doRegister/" method="POST">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <input class="mdl-textfield__input" type="text" name="name" autofocus id="name">
                                 <label class="mdl-textfield__label" for="name">单位名称</label>
@@ -20,7 +20,11 @@
                                     <span class="mdl-radio__label">团队</span>
                                 </label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-4">
-                                    <input type="radio" id="bl-option-4" class="mdl-radio__button" name="belong" value="公司">
+                                    <input type="radio" id="bl-option-4" class="mdl-radio__button" name="belong" value="商店">
+                                    <span class="mdl-radio__label">商店</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="bl-option-5">
+                                    <input type="radio" id="bl-option-5" class="mdl-radio__button" name="belong" value="公司">
                                     <span class="mdl-radio__label">公司</span>
                                 </label>
                             </div>

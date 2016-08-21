@@ -88,7 +88,7 @@ a {
     max-width: 600px;
     margin: 60px auto;
 }
-.cl-card-wide {
+.cl-card-wide,.cl-card-message {
     width: 100%;
     margin-bottom: 60px;
 }
@@ -100,7 +100,7 @@ a {
 .mdl-list__item--two-line .mdl-list__item-primary-content {
     height: 40px;
 }
-.cl-card__title {
+.cl-card-wide .cl-card__title {
     padding-top: 0;
     padding-bottom: 0;
 }
