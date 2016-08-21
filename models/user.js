@@ -43,11 +43,14 @@ UserSchema.statics = {
             this.body = '该用户已登录。';
         } else {
             if (bcrypt.compareSync(password, result.password)) {// 查找结果中的用户密码与用户输入密码一致，登录成功
-                this.session.ID = result._id;
-                this.session.AVATAR = result.avatar;
-                this.session.EMAIL = result.email;
-                this.session.USERNAME = result.username;
-                this.session.BELONG = result.belong;
+                var _user = {
+                    _id: result._id,
+                    avatar: result.avatar,
+                    email: result.email,
+                    username: result.username,
+                    belong: result.belong
+                };
+                this.session.user = _user;
 
                 if (result.belong === '学生') {
                     this.redirect('/');// 重定向到首页

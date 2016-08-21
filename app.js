@@ -29,10 +29,20 @@ var userRoute = require('./routes/user.js');
 var corporationRoute = require('./routes/corporation.js');
 var adminRoute = require('./routes/admin.js');
 
+app.use(function *(next) {
+    var _user = this.session.user;
+    
+    //应用共享用户数据
+    this.state.user = _user;
+
+    yield *next;
+});
+
 userRoute(router);
 corporationRoute(router);
 adminRoute(router);
 app.use(router.routes());
+
 
 // 连接数据库
 var db = 'mongodb://localhost/leaflets';

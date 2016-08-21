@@ -31,11 +31,13 @@
             </header>
             <div class="mdl-layout__drawer mdl-color--white">
                 <header class="cl-drawer__header mdl-color-text--white">
-                    <a class="cl-login" href="/login/"><i class="material-icons">person</i>登录</a>
-                    <!-- <img class="cl-user-avatar" src="/upload/avatars/avatar.png">
-                    <span class="cl-user-username">Basfed Lan</span>
+                <% if (!user) { %>
+                    <a class="cl-login" href="/login/"><i class="material-icons">account_circle</i>登录</a>
+                <% } else { %>
+                    <img class="cl-user-avatar" src="<%=user.avatar %>">
+                    <span class="cl-user-username"><%=user.username %></span>
                     <div class="cl-contact-dropdown">
-                        <span>basfedlan@gmail.com</span>
+                        <span><%=user.email %></span>
                         <div class="mdl-layout-spacer"></div>
                         <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                             <i class="material-icons" role="presentation">arrow_drop_down</i>
@@ -43,23 +45,34 @@
                         </button>
                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
                             <li class="mdl-menu__item">
-                                <a href="/personal/"><i class="material-icons">person</i>个人信息</a>
+                            <% if (user.belong === '学生' || user.belong === '管理员') { %>
+                                <a href="/personal/<%=user._id %>"><i class="material-icons">info</i>个人信息</a>
+                            <% } else { %>
+                                <a href="/corporation/personal/<%=user._id %>"><i class="material-icons">info</i>单位信息</a>
+                            <% } %>
                             </li>
                             <li class="mdl-menu__item">
                                 <a href="/logout/"><i class="material-icons">undo</i>退出登录</a>
                             </li>
                         </ul>
-                    </div> -->
+                    </div>
+                <% } %>
                 </header>
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="/"><i class="material-icons">home</i>首页</a>
+                <% if (!user) { %>
                     <a class="mdl-navigation__link" href="/corporation/register/"><i class="material-icons">group_add</i>单位注册</a>
                     <a class="mdl-navigation__link" href="/register/"><i class="material-icons">person_add</i>学生注册</a>
-
-                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">verified_user</i>审核单位</a>
-                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">people</i>用户管理</a>
-
-                    <a class="mdl-navigation__link" href="/register/"><i class="material-icons">create</i>发布传单</a>
+                <% } else { if (user.belong === '学生') { %>
+                    <a class="mdl-navigation__link" href="/collections/"><i class="material-icons">star</i>我的收藏</a>
+                <% } else if (user.belong === '管理员') { %>
+                    <a class="mdl-navigation__link" href="/admin/"><i class="material-icons">verified_user</i>审核单位</a>
+                    <a class="mdl-navigation__link" href="/admin/users/"><i class="material-icons">people</i>用户管理</a>
+                    <a class="mdl-navigation__link" href="/admin/release/"><i class="material-icons">note_add</i>发布公告</a>
+                <% } else { %>
+                    <a class="mdl-navigation__link" href="/corporation/"><i class="material-icons">query_builder</i>我的传单</a>
+                    <a class="mdl-navigation__link" href="/corporation/publish/"><i class="material-icons">create</i>发布传单</a>
+                <% } } %>
                 </nav>
             </div>
             <main class="mdl-layout__content mdl-color--grey-50">
