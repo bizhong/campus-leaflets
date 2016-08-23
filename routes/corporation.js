@@ -9,8 +9,9 @@ module.exports = function (router) {
     // 首页
     router.get('/corporation/', corporationIndex.index);
 
-    // 注册（单位注册）
+    // 单位注册
     router.get('/corporation/register/', corporationRegister.register);
     router.post('/corporation/doRegister/', body, corporationRegister.doRegister);
-    router.get('/corporation/registerSucceed', corporationRegister.registerSucceed);
+    router.get('/corporation/registerSucceed/', corporationRegister.registerSucceed);
+    router.get('/corporation/registerFailed/', corporationRegister.registerFailed);
 };

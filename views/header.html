@@ -46,9 +46,9 @@
                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
                             <li class="mdl-menu__item">
                             <% if (user.belong === '学生' || user.belong === '管理员') { %>
-                                <a href="/personal/<%=user._id %>"><i class="material-icons">info</i>个人信息</a>
+                                <a href="/personal/"><i class="material-icons">info</i>个人信息</a>
                             <% } else { %>
-                                <a href="/corporation/personal/<%=user._id %>"><i class="material-icons">info</i>单位信息</a>
+                                <a href="/corporation/personal/"><i class="material-icons">info</i>单位信息</a>
                             <% } %>
                             </li>
                             <li class="mdl-menu__item">

@@ -1,41 +1,60 @@
 // 模型
 var Corporation = require('../../models/corporation.js');
 
-module.exports={
-    register: function *() {
+module.exports = {
+    // 单位注册
+    register: function* () {
         yield this.render('corporation/register', {
-            title: '单位注册'
+            'title': '单位注册'
         });
     },
-    doRegister: function *() {
+    // 单位注册处理
+    doRegister: function* () {
         try {
             var corporation = this.request.body;
 
             if (!corporation.name && !corporation.belong && !corporation.email) {// 单位名称、身份和电子邮箱都为空
-                // 重定向到单位注册页面
-                this.redirect('/corporation/register/');
+                // 重定向到单位注册失败页面
+                this.redirect('/corporation/registerFailed/');
             } else {// 单位名称、身份和电子邮箱都不为空
-                // 注册信息保存到数据库
+                // 单位注册信息保存到数据库
                 var _corporation = new Corporation(corporation);
-                console.log(_corporation);
-                // _corporation.save();
+                yield _corporation.save();
 
                 // 重定向到单位注册成功页面
-                this.redirect('/corporation/registerSucceed');
+                this.redirect('/corporation/registerSucceed/');
             }
         } catch(e) {
-            this.body = "注册失败";
+            this.body = '单位注册失败';
             console.log(e);
         }
     },
-    registerSucceed: function *() {
-        var h = '单位注册成功！';
-        var p = '系统管理员审核之后会将审核结果发自您的电子邮箱，请留意！';
+    // 单位注册成功
+    registerSucceed: function* () {
+        var result = {
+            'head': '单位注册成功',
+            'paragraph': '系统管理员审核之后会将审核结果发自您填写的电子邮箱，请耐心等待！',
+            'continueTitle': '首页',
+            'continueURL': '/'
+        };
 
-        yield this.render('corporation/message', {
-            title: '单位注册成功',
-            h: h,
-            p: p
+        yield this.render('message', {
+            'title': '单位注册成功',
+            'result': result
+        });
+    },
+    // 单位注册失败
+    registerFailed: function* () {
+        var result = {
+            'head': '单位注册失败',
+            'paragraph': '单位信息输入有错，例如：单位名称、身份和电子邮箱为空。请再次输入！',
+            'continueTitle': '单位注册',
+            'continueURL': '/corporation/register/'
+        };
+
+        yield this.render('message', {
+            'title': '单位注册失败',
+            'result': result
         });
     }
 };

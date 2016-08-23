@@ -1,0 +1,40 @@
+<% include ../header.html %>
+                    <section class="mdl-grid mdl-grid--no-spacing">
+                        <form class="cl-form mdl-cell mdl-cell--12-col mdl-shadow--2dp" action="/modifyPersonal/" method="POST">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <img src="<%=personal.avatar %>">
+                                <input type="file" name="avatar" id="avatar">
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="email" name="email" value="<%=personal.email %>" id="email" readonly>
+                                <label class="mdl-textfield__label" for="email">电子邮箱</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" name="username" value="<%=personal.username %>" id="username" readonly>
+                                <label class="mdl-textfield__label" for="username">用户名</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <span class="cl-radio-title">性别</span>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-1">
+                                    <input type="radio" id="sex-option-1" class="mdl-radio__button" name="sex" value="男" <% if (personal.sex === '男') { %>checked<% } %>>
+                                    <span class="mdl-radio__label">男</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-2">
+                                    <input type="radio" id="sex-option-2" class="mdl-radio__button" name="sex" value="女" <% if (personal.sex === '女') { %>checked<% } %>>
+                                    <span class="mdl-radio__label">女</span>
+                                </label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="tel" name="tel" value="<%=personal.tel %>" id="tel">
+                                <label class="mdl-textfield__label" for="tel">手机号码或电话号码</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="password" name="password" value="<%=personal.password %>" id="password">
+                                <label class="mdl-textfield__label" for="password">密码</label>
+                            </div>
+                            <p>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">修改</button>
+                            </p>
+                        </form>
+                    </section>
+<% include ../footer.html %>

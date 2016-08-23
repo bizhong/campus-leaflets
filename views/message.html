@@ -1,12 +1,12 @@
-<% include ../header.html %>
+<% include header.html %>
                     <section class="mdl-grid mdl-grid--no-spacing">
                         <div class="cl-card-message mdl-card mdl-shadow--2dp">
                             <div class="mdl-card__title cl-card__title">
-                                <h2 class="mdl-card__title-text"><%=h %></h2>
+                                <h2 class="mdl-card__title-text"><%=result.head %></h2>
                             </div>
                             <div class="mdl-card__supporting-text">
-                                <%=p %>
+                                <%=result.paragraph %><a href="<%=result.continueURL %>"><%=result.continueTitle %></a>
                             </div>
                         </div>
                     </section>
-<% include ../footer.html %>
+<% include footer.html %>

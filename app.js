@@ -5,7 +5,6 @@ var path = require('path');
 var render = require('koa-ejs');
 var router = require('koa-router')();
 var mongoose = require('mongoose');
-// var body = require('koa-body');
 var session = require('koa-session');
 var fs = require('fs');
 
@@ -30,11 +29,19 @@ var corporationRoute = require('./routes/corporation.js');
 var adminRoute = require('./routes/admin.js');
 
 app.use(function *(next) {
-    var _user = this.session.user;
+    var _user = this.session.user || null;
     
     //应用共享用户数据
     this.state.user = _user;
 
+    // this.state.user = {
+    //     '_id': '57bae7d3d9e7bd3417087ee4',
+    //     'email': 'zhangsan@gmail.com',
+    //     'username': '张三',
+    //     'belong': '学生',
+    //     'avatar': '/upload/avatars/avatar.png'
+    // };
+    
     yield *next;
 });
 
@@ -45,12 +52,10 @@ app.use(router.routes());
 
 
 // 连接数据库
-var db = 'mongodb://localhost/leaflets';
-// mongoose.connect(db);
+var dbPath = 'mongodb://127.0.0.1/campusleaflets';
+mongoose.connect(dbPath);
 
 // 中间件
-// app.use(body({multipart: true}));
-
 app.keys = ['some secret hurr'];
 app.use(session(app));
 
@@ -64,4 +69,4 @@ var port = process.env.PORT || 3000;
 app.listen(port);
 
 // 打印日志
-console.log('listening on port '+ port);
+console.log('Campus Leaflets started on port '+ port);

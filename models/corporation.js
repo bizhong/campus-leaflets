@@ -11,6 +11,7 @@ var CorporationSchema = new mongoose.Schema({
     url: String,// 网址
     address: String,// 地址
     introduction: String,// 介绍
+    state: { type: String, default: '未审核'},// 状态（未审核，通过）
     picture: { type: String, default: '/upload/pictures/picture.png' }// 单位照片
 });
 
