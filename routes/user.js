@@ -23,6 +23,7 @@ module.exports = function (router) {
 
     // 个人信息
     router.get('/personal/', userPersonal.personal);
+    router.post('/modifyPersonal/', body, userPersonal.modifyPersonal);
 
     // 退出登录
     router.get('/logout/', userLogout.logout);

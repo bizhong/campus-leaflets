@@ -46,13 +46,13 @@
                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
                             <li class="mdl-menu__item">
                             <% if (user.belong === '学生' || user.belong === '管理员') { %>
-                                <a href="/personal/"><i class="material-icons">info</i>个人信息</a>
+                                <a href="/personal/"><i class="material-icons">account_circle</i>个人信息</a>
                             <% } else { %>
-                                <a href="/corporation/personal/"><i class="material-icons">info</i>单位信息</a>
+                                <a href="/corporation/personal/"><i class="material-icons">account_circle</i>单位信息</a>
                             <% } %>
                             </li>
                             <li class="mdl-menu__item">
-                                <a href="/logout/"><i class="material-icons">undo</i>退出登录</a>
+                                <a href="/logout/"><i class="material-icons">power_settings_new</i>退出登录</a>
                             </li>
                         </ul>
                     </div>
@@ -70,7 +70,7 @@
                     <a class="mdl-navigation__link" href="/admin/users/"><i class="material-icons">people</i>用户管理</a>
                     <a class="mdl-navigation__link" href="/admin/release/"><i class="material-icons">note_add</i>发布公告</a>
                 <% } else { %>
-                    <a class="mdl-navigation__link" href="/corporation/"><i class="material-icons">query_builder</i>我的传单</a>
+                    <a class="mdl-navigation__link" href="/corporation/"><i class="material-icons">schedule</i>我的传单</a>
                     <a class="mdl-navigation__link" href="/corporation/publish/"><i class="material-icons">create</i>发布传单</a>
                 <% } } %>
                 </nav>

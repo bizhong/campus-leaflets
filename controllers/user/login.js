@@ -40,7 +40,8 @@ module.exports = {
                                 'avatar': result.avatar,
                                 'email': result.email,
                                 'username': result.username,
-                                'belong': result.belong
+                                'belong': result.belong,
+                                'password': password
                             };
 
                             // 不同身份重定向到不同页面

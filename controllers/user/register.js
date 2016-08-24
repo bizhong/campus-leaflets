@@ -12,8 +12,9 @@ module.exports = {
     doRegister: function* () {
         try {
             var user = this.request.body;
+            var password = user.password;// 密码
 
-            if (!user.email && !user.username && !user.password) {// 电子邮箱、用户名和密码都为空
+            if (!user.email && !user.username && !password) {// 电子邮箱、用户名和密码都为空
                 // 重定向到学生注册失败页面
                 this.redirect('/registerFailed/');
             } else {// 电子邮箱、用户名和密码都不为空
@@ -21,7 +22,7 @@ module.exports = {
                 user.tel = user.tel || 0;
 
                 // 密码加密
-                user.password = User.passwordEncrypt(user.password);
+                user.password = User.passwordEncrypt(password);
 
                 // 学生注册信息保存到数据库
                 var _user = new User(user);
@@ -37,7 +38,8 @@ module.exports = {
                     'avatar': _user.avatar,
                     'email': _user.email,
                     'username': _user.username,
-                    'belong': _user.belong
+                    'belong': _user.belong,
+                    'password': password
                 };
 
                 // 重定向到首页

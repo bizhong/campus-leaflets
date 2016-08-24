@@ -36,8 +36,8 @@ var userRoute = require('./routes/user.js');
 var corporationRoute = require('./routes/corporation.js');
 var adminRoute = require('./routes/admin.js');
 
-app.use(function *(next) {
-    var _user = this.session.user || null;
+app.use(function* (next) {
+    var _user = this.session.user;
     
     //应用共享用户数据
     this.state.user = _user;

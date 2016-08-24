@@ -45,6 +45,12 @@ a {
     border-radius: 50%;
     background-color: #757575;
 }
+.cl-user-avatar-square {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    background-color: #757575;
+}
 .cl-user-username {
     font-weight: bold;
 }

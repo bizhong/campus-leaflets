@@ -26,10 +26,6 @@ UserSchema.statics = {
     passwordEncrypt: function(password) {
         return bcrypt.hashSync(password);
     },
-    // 密码解密
-    passwordDencrypt: function(password) {
-        
-    },
     // 密码比较
     passwordCompare: function(password, hash) {
         return bcrypt.compareSync(password, hash);
