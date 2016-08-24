@@ -23,6 +23,14 @@ render(app, {
     debug: true
 });
 
+// 连接数据库
+var dbPath = 'mongodb://127.0.0.1/campusleaflets';
+mongoose.connect(dbPath);
+
+// 中间件
+app.keys = ['some secret hurr'];
+app.use(session(app));
+
 // 路由
 var userRoute = require('./routes/user.js');
 var corporationRoute = require('./routes/corporation.js');
@@ -33,14 +41,6 @@ app.use(function *(next) {
     
     //应用共享用户数据
     this.state.user = _user;
-
-    // this.state.user = {
-    //     '_id': '57bae7d3d9e7bd3417087ee4',
-    //     'email': 'zhangsan@gmail.com',
-    //     'username': '张三',
-    //     'belong': '学生',
-    //     'avatar': '/upload/avatars/avatar.png'
-    // };
     
     yield *next;
 });
@@ -49,15 +49,6 @@ userRoute(router);
 corporationRoute(router);
 adminRoute(router);
 app.use(router.routes());
-
-
-// 连接数据库
-var dbPath = 'mongodb://127.0.0.1/campusleaflets';
-mongoose.connect(dbPath);
-
-// 中间件
-app.keys = ['some secret hurr'];
-app.use(session(app));
 
 // 错误处理
 app.on('error', function(err, ctx) {

@@ -5,7 +5,7 @@ module.exports = {
     // 退出登录
     logout: function* () {
         try {
-            var id = this.state.user._id;// this.session.user._id
+            var id = this.session.user._id;
             
             // 设置用户状态为“未登录”
             yield User.setUserState(id, '未登录');

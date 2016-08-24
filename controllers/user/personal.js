@@ -5,7 +5,7 @@ module.exports = {
     // 个人信息
     personal: function* () {
         try {
-            var id = this.state.user._id;// this.session.user._id
+            var id = this.session.user._id;
 
             // 查询符合条件的第一条用户记录
             var result = yield User.findOne({'_id': id});
