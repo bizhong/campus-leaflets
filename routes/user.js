@@ -22,9 +22,11 @@ module.exports = function (router) {
     router.post('/doLogin/', body, userLogin.doLogin);
 
     // 个人信息
-    router.get('/personal/', userPersonal.personal);
-    router.post('/modifyPersonal/', body, userPersonal.modifyPersonal);
+    router.get('/personal/', userLogin.userLogined, userPersonal.personal);
+    router.post('/modifyPersonal/', userLogin.userLogined, body, userPersonal.modifyPersonal);
 
     // 退出登录
-    router.get('/logout/', userLogout.logout);
+    router.get('/logout/', userLogin.userLogined, userLogout.logout);
+
+    // 我的收藏
 };

@@ -1,10 +1,15 @@
 // 控制器
+var userLogin = require('../controllers/user/login.js');
 var adminIndex = require('../controllers/admin/index.js');
 
 // 中间件
 var body = require('koa-body')({ multipart: true });
 
 module.exports = function (router) {
-    // 首页
-    router.get('/admin/', adminIndex.index);
+    // 审核单位（管理员首页）
+    router.get('/admin/', userLogin.adminLogined, adminIndex.index);
+
+    // 用户管理
+
+    // 发布公告
 };

@@ -66,5 +66,51 @@ module.exports = {
             this.body = "登录失败";
             console.log(e);
         }
+    },
+    // 用户已登录（学生、单位和管理员）
+    userLogined: function* (next) {
+        var user = this.session.user;// 获取用户会话
+
+        if (!user) {// 用户会话不存在，无权访问
+            // 重定向首页
+            this.redirect('/');
+        } else {// 用户会话存在，有权访问
+            yield* next;
+        }
+    },
+    // 学生已登录
+    studentLogined: function* (next) {
+        var user = this.session.user || {};// 获取用户会话，无设置为一个空对象
+
+        if (user.belong !== '学生') {// 身份不是学生，无权访问
+            // 重定向首页
+            this.redirect('/');
+        } else {// 身份是学生，有权访问
+            yield* next;
+        }
+
+    },
+    // 单位已登录
+    corporationLogined: function* (next) {
+        var user = this.session.user || {};// 获取用户会话，无设置为一个空对象
+
+        if (user.belong === 'undefined' && user.belong === '学生' && user.belong === '管理员') {// 身份为空，且是学生和管理员，无权访问
+            // 重定向首页
+            this.redirect('/');
+        } else {// 身份是单位，有权访问
+            yield* next;
+        }
+
+    },
+    // 管理员已登录
+    adminLogined: function* (next) {
+        var user = this.session.user || {};// 获取用户会话，无设置为一个空对象
+
+        if (user.belong !== '管理员') {// 身份不是管理员，无权访问
+            // 重定向首页
+            this.redirect('/');
+        } else {// 身份是管理员，有权访问
+            yield* next;
+        }
     }
 };

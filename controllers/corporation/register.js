@@ -17,6 +17,9 @@ module.exports = {
                 // 重定向到单位注册失败页面
                 this.redirect('/corporation/registerFailed/');
             } else {// 单位名称、身份和电子邮箱都不为空
+                // 手机号码或电话号码为空，特殊处理
+                corporation.tel = corporation.tel || 0;
+
                 // 单位注册信息保存到数据库
                 var _corporation = new Corporation(corporation);
                 yield _corporation.save();
