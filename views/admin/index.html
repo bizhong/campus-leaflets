@@ -1,8 +1,29 @@
 <% include ../header.html %>
-                    <section class="mdl-grid cl-session">
-                        <h1 class="cl-session-title">审核单位列表</span></h1>
-                        <div class="cl-session-content mdl-color--white mdl-shadow--2dp">
-                            
+                    <section class="mdl-grid mdl-grid--no-spacing mdl-color--white mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">未审核单位列表</h2>
                         </div>
+                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--12-col">
+                            <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric">单位名称</th>
+                                    <th>身份</th>
+                                    <th>网址</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% if (result.length) { %>
+                                <% result.forEach(function(item) { %>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric"><%=item.name %></td>
+                                    <td><%=item.belong %></td>
+                                    <td><a href="<%=item.url %>" target="_blank"><%=item.url %></a></td>
+                                    <td><a href="/admin/verifyCorporation/<%=item._id %>/">审核</a></td>
+                                </tr>
+                                <% }) %>
+                            <% } %>
+                            </tbody>
+                        </table>
                     </section>
 <% include ../footer.html %>

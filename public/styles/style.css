@@ -94,7 +94,7 @@ a {
     max-width: 600px;
     margin: 60px auto;
 }
-.cl-card-wide,.cl-card-message {
+.cl-card-wide,.cl-card-message,.cl-grid {
     width: 100%;
     margin-bottom: 60px;
 }
@@ -117,6 +117,9 @@ a {
 .cl-form {
     padding: 16px;
     background: #fff;
+}
+.cl-form--border {
+    border-top: 1px solid rgba(0,0,0,.1);
 }
 .cl-form .mdl-textfield {
     width: 100%;
