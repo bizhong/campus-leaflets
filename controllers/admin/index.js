@@ -61,21 +61,22 @@ module.exports = {
                         'username': result.name,
                         'tel': result.tel,
                         'belong': result.belong,
-                        'password': '00000000'
+                        'password': '888888'
                     });
                     yield _user.save();
 
                     // 发送邮件通知单位
-                    text = '<p>恭喜 <strong>' + result.name + '</strong>，单位注册成功。</p><p>点击链接登录：<a href="http://localhost:3000/login/">http://localhost:3000/login/</a>。</p><p>校园传单</p>';
+                    text = '<p>恭喜 <strong>' + result.name + '</strong>，单位注册成功。</p><p>点击链接即可登录（用户名：'+ result.name +'，电子邮箱：'+ result.email +'，初始密码：888888）：<a href="http://localhost:3000/login/">http://localhost:3000/login/</a>，登录成功之后可完善单位信息、发布传单等。</p><p style="padding-top: 60px;">校园传单（Campus Leaflets）</p>';
                     yield Corporation.sendMail(result.email, text);
                 } else {// 不通过
                     // 删除单位信息
                     yield Corporation.remove({'_id': id});
 
                     // 发送邮件通知单位
-                    text = '<p>很遗憾 <strong>' + result.name + '</strong>，单位注册失败。</p><p>点击链接重新注册：<a href="http://localhost:3000/corporation/register/">http://localhost:3000/corporation/register/</a>。</p><p>校园传单</p>';
+                    text = '<p>很遗憾 <strong>' + result.name + '</strong>，单位注册失败。</p><p>点击链接重新注册：<a href="http://localhost:3000/corporation/register/">http://localhost:3000/corporation/register/</a>。</p><p style="padding-top: 60px;">校园传单（Campus Leaflets）</p>';
                     yield Corporation.sendMail(result.email, text);
                 }
+
                 // 重定向到审核单位页面
                 this.redirect('/admin/');
             }

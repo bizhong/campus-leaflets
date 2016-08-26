@@ -15,7 +15,7 @@ var UserSchema = new Schema({
     belong: { type: String, default: '学生' },// 身份（学生，社团，部门，团队，商店，公司，管理员）
     password: String,// 密码
     state: { type: String, default: '未登录' },// 状态（已登录，未登录）
-    collections: [{type: ObjectId, ref: 'Leaflet'}]// 收藏的传单
+    collections: [{ type: ObjectId, ref: 'Leaflet' }]// 收藏的传单
 });
 // 定义用户实例方法
 UserSchema.methods = {};

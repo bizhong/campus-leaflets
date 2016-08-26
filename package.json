@@ -27,6 +27,7 @@
     "koa-static": "^2.0.0",
     "mongoose": "^4.5.8",
     "nodemailer": "^2.5.0",
+    "nodemailer-smtp-transport": "^2.6.0",
     "path": "^0.12.7"
   }
 }

@@ -1,6 +1,7 @@
 // 引用模块
 var mongoose = require('mongoose');
 var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 // SMTP Transport 配置
 var configSMTP = require('../config/smtp').smtpTransport;
@@ -15,7 +16,7 @@ var CorporationSchema = new mongoose.Schema({
     url: String,// 网址
     address: String,// 地址
     introduction: String,// 介绍
-    state: { type: String, default: '未审核'},// 状态（未审核，通过）
+    state: { type: String, default: '未审核' },// 状态（未审核，通过）
     picture: { type: String, default: '/upload/pictures/picture.png' }// 单位照片
 });
 
@@ -30,8 +31,29 @@ CorporationSchema.statics = {
     },
     // 发送邮件通知单位
     sendMail: function* (email, text) {
-        console.log(email + text);
-        console.log(configSMTP);
+
+        // 开启一个 SMTP 连接池
+        var transport = nodemailer.createTransport(smtpTransport(configSMTP));
+
+        // 设置邮件内容
+        var mailOptions = {
+            'from': 'bizhongbio@qq.com',// 发件地址
+            'to': email,// 收件列表
+            'subject': '校园传单单位注册审核结果',// 标题
+            'html': text
+        };
+
+        // 发送邮件
+        transport.sendMail(mailOptions, function(error, response) {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log(response);
+            }
+
+            // 如果没用，关闭连接池
+            transport.close();
+        });
     }
 };
 

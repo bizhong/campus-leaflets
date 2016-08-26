@@ -6,8 +6,8 @@ module.exports = {
         secure: true, // 使用 SSL
         port: 465, // SMTP 端口
         auth: {
-            user: "xxxxxxxxxx@qq.com", // 账号
-            pass: "xxxxxxxxxx" // 密码
+            user: "xxxxxxxx@qq.com", // 账号
+            pass: "xxxxxxxx" // 密码
         }
     }
 };
