@@ -1,5 +1,9 @@
 // 引用模块
 var mongoose = require('mongoose');
+var nodemailer = require('nodemailer');
+
+// SMTP Transport 配置
+var configSMTP = require('../config/smtp').smtpTransport;
 
 // 定义单位模式
 var CorporationSchema = new mongoose.Schema({
@@ -19,7 +23,17 @@ var CorporationSchema = new mongoose.Schema({
 CorporationSchema.methods = {};
     
 // 定义单位静态方法，在 Model 层就能使用
-CorporationSchema.statics = {};
+CorporationSchema.statics = {
+    // 设置单位状态
+    setCorporationState: function* (id, stateValue) {
+        yield this.update({'_id': id}, {$set: {'state': stateValue}});
+    },
+    // 发送邮件通知单位
+    sendMail: function* (email, text) {
+        console.log(email + text);
+        console.log(configSMTP);
+    }
+};
 
 // 编译单位模型
 var Corporation = mongoose.model('Corporation', CorporationSchema);

@@ -1,5 +1,6 @@
 // 加载模型
 var Corporation = require('../../models/corporation.js');
+var User = require('../../models/user.js');
 
 module.exports = {
     // 审核单位（管理员首页）
@@ -39,10 +40,45 @@ module.exports = {
         try {
             var result = this.request.body;
             var id = result._id;// 单位 ID
-            var state = result.state;// 审核结果
+            var state = result.state;// 审核单位结果
 
-            // 重定向到审核单位页面
-            this.redirect('/admin/');
+            if (!state) {// 没填写审核单位结果
+                // 重定向到上个页面
+                this.redirect('/admin/verifyCorporation/' + id + '/');
+            } else {// 填写了审核单位结果
+                var text = '';// 邮件正文内容
+                
+                // 查询符合条件的第一条单位记录
+                var result = yield Corporation.findOne({'_id': id});
+
+                if (state === '通过') {// 通过
+                    // 设置单位状态为“通过”
+                    yield Corporation.setCorporationState(id, state);
+
+                    // 单位信息保存到数据库
+                    var _user = new User({
+                        'email': result.email,
+                        'username': result.name,
+                        'tel': result.tel,
+                        'belong': result.belong,
+                        'password': '00000000'
+                    });
+                    yield _user.save();
+
+                    // 发送邮件通知单位
+                    text = '<p>恭喜 <strong>' + result.name + '</strong>，单位注册成功。</p><p>点击链接登录：<a href="http://localhost:3000/login/">http://localhost:3000/login/</a>。</p><p>校园传单</p>';
+                    yield Corporation.sendMail(result.email, text);
+                } else {// 不通过
+                    // 删除单位信息
+                    yield Corporation.remove({'_id': id});
+
+                    // 发送邮件通知单位
+                    text = '<p>很遗憾 <strong>' + result.name + '</strong>，单位注册失败。</p><p>点击链接重新注册：<a href="http://localhost:3000/corporation/register/">http://localhost:3000/corporation/register/</a>。</p><p>校园传单</p>';
+                    yield Corporation.sendMail(result.email, text);
+                }
+                // 重定向到审核单位页面
+                this.redirect('/admin/');
+            }
         } catch(e) {
             this.body = '审核单位处理失败';
             console.log(e);
