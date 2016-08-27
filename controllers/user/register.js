@@ -13,8 +13,10 @@ module.exports = {
         try {
             var user = this.request.body;
             var password = user.password;// 密码
+            var emailResult = user.emailResult;// 电子邮件是否可用
+            var usernameResult = user.usernameResult;// 用户名是否可用
 
-            if (!user.email && !user.username && !password) {// 电子邮箱、用户名和密码都为空
+            if (!user.email || !user.username || !password || emailResult === 'no' || usernameResult === 'no') {// 电子邮箱、用户名和密码为空，电子邮箱、用户名不可用
                 // 重定向到学生注册失败页面
                 this.redirect('/registerFailed/');
             } else {// 电子邮箱、用户名和密码都不为空
@@ -54,7 +56,7 @@ module.exports = {
     registerFailed: function* () {
         var result = {
             'head': '学生注册失败',
-            'paragraph': '个人信息输入有错，例如：电子邮箱、用户名和密码为空。请再次输入！',
+            'paragraph': '个人信息输入有错，例如：电子邮箱、用户名和密码为空，电子邮箱、用户名不可用。请再次输入！',
             'continueTitle': '学生注册',
             'continueURL': '/register/'
         };

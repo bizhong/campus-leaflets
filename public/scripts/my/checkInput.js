@@ -5,10 +5,12 @@ define(['EventUtil'], function(EventUtil) {
         var target = EventUtil.getTarget(event),
             email = EventUtil.getId("email"),
             username = EventUtil.getId("username"),
-            clEmailPrompt = EventUtil.getId("cl-email-prompt"),
-            clUsernamePrompt = EventUtil.getId("cl-username-prompt");
+            emailPrompt = EventUtil.getId("cl-email-prompt"),
+            usernamePrompt = EventUtil.getId("cl-username-prompt"),
+            emailResult = EventUtil.getId("cl-email-result"),
+            usernameResult = EventUtil.getId("cl-username-result");
 
-        function ajaxGetResultNum(varname, element1, element2) {
+        function ajaxGetResultNum(varname, element1, element2, element3) {
             var name = varname,// 变量名（email 或 username）
                 value = element1.value,// 用户输入值
                 request;
@@ -21,12 +23,14 @@ define(['EventUtil'], function(EventUtil) {
 
             request.onreadystatechange = function() {
                 if (request.readyState == 4 && request.status == 200) {
-
                     if (request.responseText === "电子邮件不可用" || request.responseText === "用户名不可用") {
                         element2.className = "mdl-color-text--red";
+                        element3.value = "no";
                     } else {
                         element2.className = "mdl-color-text--green";
+                        element3.value = "yes";
                     }
+
                     element2.innerHTML = request.responseText;
                 }
             };
@@ -36,10 +40,14 @@ define(['EventUtil'], function(EventUtil) {
 
         switch(target) {
             case email:
-                ajaxGetResultNum("email", email, clEmailPrompt);
+                if (email.value) {// 电子邮件不为空
+                    ajaxGetResultNum("email", email, emailPrompt, emailResult);
+                }
                 break;
             case username:
-                ajaxGetResultNum("username", username, clUsernamePrompt);
+                if (username.value) {// 用户名不为空
+                    ajaxGetResultNum("username", username, usernamePrompt, usernameResult);
+                }
                 break;
         }
     };

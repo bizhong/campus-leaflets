@@ -12,8 +12,10 @@ module.exports = {
     doRegister: function* () {
         try {
             var corporation = this.request.body;
+            var emailResult = corporation.emailResult;// 电子邮件是否可用
+            var usernameResult = corporation.usernameResult;// 用户名是否可用
 
-            if (!corporation.name && !corporation.belong && !corporation.email) {// 单位名称、身份和电子邮箱都为空
+            if (!corporation.name || !corporation.belong || !corporation.email || emailResult === 'no' || usernameResult === 'no') {// 单位名称、身份和电子邮箱为空，电子邮箱、用户名不可用
                 // 重定向到单位注册失败页面
                 this.redirect('/corporation/registerFailed/');
             } else {// 单位名称、身份和电子邮箱都不为空
@@ -50,7 +52,7 @@ module.exports = {
     registerFailed: function* () {
         var result = {
             'head': '单位注册失败',
-            'paragraph': '单位信息输入有错，例如：单位名称、身份和电子邮箱为空。请再次输入！',
+            'paragraph': '单位信息输入有错，例如：单位名称、身份和电子邮箱为空，电子邮箱、用户名不可用。请再次输入！',
             'continueTitle': '单位注册',
             'continueURL': '/corporation/register/'
         };

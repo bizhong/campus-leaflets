@@ -6,12 +6,14 @@
                                 <input class="mdl-textfield__input" type="email" name="email" pattern="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" id="email">
                                 <label class="mdl-textfield__label" for="email">电子邮箱</label>
                                 <span class="mdl-textfield__error">电子邮箱有误，请重填。</span>
+                                <input id="cl-email-result" type="hidden" name="emailResult" value="no">
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <span id="cl-username-prompt"></span>
                                 <input class="mdl-textfield__input" type="text" name="username" pattern="[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+" id="username">
                                 <label class="mdl-textfield__label" for="username">用户名</label>
                                 <span class="mdl-textfield__error">用户名有误，只能包含中文、字母或数字的组合，且以中文或字母开头。</span>
+                                <input id="cl-username-result" type="hidden" name="usernameResult" value="no">
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <span class="cl-radio-title">性别</span>
