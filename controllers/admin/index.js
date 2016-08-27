@@ -61,7 +61,7 @@ module.exports = {
                         'username': result.name,
                         'tel': result.tel,
                         'belong': result.belong,
-                        'password': 'CLu0000'
+                        'password': User.passwordEncrypt('CLu0000')
                     });
                     yield _user.save();
 

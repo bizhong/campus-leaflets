@@ -7,7 +7,7 @@ module.exports = {
         port: 465, // SMTP 端口
         auth: {
             user: "bizhongbio@qq.com", // 账号
-            pass: "xxxxxx" // 密码
+            pass: "xxxxxxxxxx" // 密码
         }
     }
 };
