@@ -61,12 +61,12 @@ module.exports = {
                         'username': result.name,
                         'tel': result.tel,
                         'belong': result.belong,
-                        'password': '888888'
+                        'password': 'CLu0000'
                     });
                     yield _user.save();
 
                     // 发送邮件通知单位
-                    text = '<p>恭喜 <strong>' + result.name + '</strong>，单位注册成功。</p><p>点击链接即可登录（用户名：'+ result.name +'，电子邮箱：'+ result.email +'，初始密码：888888）：<a href="http://localhost:3000/login/">http://localhost:3000/login/</a>，登录成功之后可完善单位信息、发布传单等。</p><p style="padding-top: 60px;">校园传单（Campus Leaflets）</p>';
+                    text = '<p>恭喜 <strong>' + result.name + '</strong>，单位注册成功。</p><p>点击链接即可登录（用户名：'+ result.name +'，电子邮箱：'+ result.email +'，初始密码：CLu0000）：<a href="http://localhost:3000/login/">http://localhost:3000/login/</a>，登录成功之后可完善单位信息、发布传单等。</p><p style="padding-top: 60px;">校园传单（Campus Leaflets）</p>';
                     yield Corporation.sendMail(result.email, text);
                 } else {// 不通过
                     // 删除单位信息

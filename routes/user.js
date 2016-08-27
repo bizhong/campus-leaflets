@@ -1,6 +1,7 @@
 // 控制器
 var userIndex = require('../controllers/user/index.js');
 var userRegister = require('../controllers/user/register.js');
+var userCheck = require('../controllers/user/check.js');
 var userLogin = require('../controllers/user/login.js');
 var userPersonal = require('../controllers/user/personal.js');
 var userLogout = require('../controllers/user/logout.js');
@@ -16,6 +17,9 @@ module.exports = function (router) {
     router.get('/register/', userRegister.register);
     router.post('/doRegister/', body, userRegister.doRegister);
     router.get('/registerFailed/', userRegister.registerFailed);
+
+    // 注册检查（电子邮件、用户名检查是否已注册）
+    router.get('/register/check/*', userCheck.check);
 
     // 登录
     router.get('/login/', userLogin.login);

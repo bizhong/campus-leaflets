@@ -1,13 +1,17 @@
 <% include ../header.html %>
                     <section class="mdl-grid mdl-grid--no-spacing">
-                        <form class="cl-form mdl-cell mdl-cell--12-col mdl-shadow--2dp" action="/doRegister/" method="POST">
+                        <form id="cl-form" class="mdl-cell mdl-cell--12-col mdl-shadow--2dp" action="/doRegister/" method="POST">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="email" name="email" autofocus id="email">
+                                <span id="cl-email-prompt"></span>
+                                <input class="mdl-textfield__input" type="email" name="email" pattern="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" id="email">
                                 <label class="mdl-textfield__label" for="email">电子邮箱</label>
+                                <span class="mdl-textfield__error">电子邮箱有误，请重填。</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" name="username" id="username">
+                                <span id="cl-username-prompt"></span>
+                                <input class="mdl-textfield__input" type="text" name="username" pattern="[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+" id="username">
                                 <label class="mdl-textfield__label" for="username">用户名</label>
+                                <span class="mdl-textfield__error">用户名有误，只能包含中文、字母或数字的组合，且以中文或字母开头。</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <span class="cl-radio-title">性别</span>
@@ -21,12 +25,14 @@
                                 </label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="tel" name="tel" id="tel">
+                                <input class="mdl-textfield__input" type="tel" name="tel" pattern="(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}" id="tel">
                                 <label class="mdl-textfield__label" for="tel">手机号码或电话号码</label>
+                                <span class="mdl-textfield__error">手机号码有误，请重填。</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="password" name="password" id="password">
+                                <input class="mdl-textfield__input" type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,16}$" id="password">
                                 <label class="mdl-textfield__label" for="password">密码</label>
+                                <span class="mdl-textfield__error">密码强度不够，必须包含大小写字母和数字的组合，不能使用特殊字符，长度在7-16之间。</span>
                             </div>
                             <p>
                                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">注册</button>
@@ -34,4 +40,5 @@
                             </p>
                         </form>
                     </section>
+                    <script data-main="/scripts/main" src="/scripts/libs/require.js"></script>
 <% include ../footer.html %>
