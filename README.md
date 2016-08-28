@@ -1,4 +1,4 @@
-# campus-leaflets
+# 校园传单（Campus Leaflets）
 
 校园传单是一个使用 Node.js、MongoDB、Koa、EJS、MDL 和 RequireJS 开发的 Node 应用程序。
 
@@ -33,6 +33,8 @@
 - 模块化工具：RequireJS
 
 - CSS 预编译语言：Less
+
+- 自动化构建工具：Gulp
 
 - 版本控制：Git、GitHub
 
@@ -219,17 +221,17 @@ node --harmony app
 校园传单（Campus Leaflets）项目归兰必钟一人所有。
 
   [1]: https://getmdl.io/
-  [3]: /blob/master/screenshot/student-login.gif
-  [4]: /blob/master/screenshot/corporation-login.gif
-  [5]: /blob/master/screenshot/admin-login.gif
-  [6]: /blob/master/screenshot/nav.png
-  [8]: /blob/master/screenshot/admin-logout.gif
-  [10]: /blob/master/screenshot/corporation-register.gif
-  [11]: /blob/master/screenshot/corporation-register-succeed.png
-  [12]: /blob/master/screenshot/corporation-register-failed.png
-  [15]: /blob/master/screenshot/admin-verifycorporation-yes.gif
-  [16]: /blob/master/screenshot/admin-verifycorporation-yes-email.png
-  [17]: /blob/master/screenshot/admin-verifycorporation-no.gif
-  [18]: /blob/master/screenshot/admin-verifycorporation-no-email.png
-  [21]: /blob/master/screenshot/student-register-succeed.gif
-  [22]: /blob/master/screenshot/student-register-failed.gif
+  [3]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-login.gif
+  [4]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-login.gif
+  [5]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-login.gif
+  [6]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/nav.png
+  [8]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-logout.gif
+  [10]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-register.gif
+  [11]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-register-succeed.png
+  [12]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-register-failed.png
+  [15]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes.gif
+  [16]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes-email.png
+  [17]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no.gif
+  [18]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no-email.png
+  [21]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-register-succeed.gif
+  [22]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-register-failed.gif
