@@ -15,7 +15,7 @@ module.exports = {
             var emailusername = user.emailusername;// 电子邮箱（或用户名）
             var password = user.password;// 密码
 
-            if (!emailusername && !password) {// 电子邮箱（或用户名）和密码都为空
+            if (!emailusername || !password) {// 电子邮箱（或用户名）和密码为空
                 // 重定向到登录页面
                 this.redirect('/login/');
             } else {// 电子邮箱（或用户名）和密码都不为空
