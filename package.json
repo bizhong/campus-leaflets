@@ -5,14 +5,18 @@
   "main": "app.js",
   "repository": "https://github.com/basfed/campus-leaflets.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony app"
   },
   "keywords": [
     "Node.js",
     "MongoDB",
     "Koa",
     "EJS",
-    "MDL"
+    "MDL",
+    "Less",
+    "RequireJS",
+    "Gulp"
   ],
   "author": "Bizhong Lan",
   "license": "ISC",
@@ -27,7 +31,13 @@
     "koa-static": "^2.0.0",
     "mongoose": "^4.5.8",
     "nodemailer": "^2.5.0",
-    "nodemailer-smtp-transport": "^2.6.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0"
   }
 }

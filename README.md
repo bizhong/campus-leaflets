@@ -187,7 +187,6 @@ mongod.exe --dbpath E:\MongoDB\data\db
 
 ```git
 npm install
-
 ```
 
 - 修改配置（源代码：`config` 目录下的 `smtp.js` 文件）
