@@ -132,7 +132,7 @@
 
 管理员点击**用户管理**，查看已注册的学生列表和已审核通过单位列表。若用户（学生、单位）违反校园传单社区规则，则删除用户信息（单位还要删除发布的所有传单）；否则，不做任何处理。
 
-（未完成）
+![用户管理][19]
 
 - 发布公告
 
@@ -219,7 +219,7 @@ node --harmony app
 
 ## 版权声明
 
-校园传单（Campus Leaflets）项目归兰必钟一人所有。
+校园传单（Campus Leaflets）归兰必钟一人所有。
 
   [1]: https://getmdl.io/
   [3]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-login.gif
@@ -234,5 +234,6 @@ node --harmony app
   [16]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes-email.png
   [17]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no.gif
   [18]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no-email.png
+  [19]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-user-management.gif
   [21]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-register-succeed.gif
   [22]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-register-failed.png
