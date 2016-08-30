@@ -1,0 +1,50 @@
+<% include ../header.html %>
+                    <section class="mdl-grid mdl-grid--no-spacing mdl-color--white mdl-shadow--2dp">
+                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                            <div class="mdl-tabs__tab-bar">
+                                <a href="#corporations-panel" class="mdl-tabs__tab is-active">单位</a>
+                                <a href="#students-panel" class="mdl-tabs__tab">学生</a>
+                            </div>
+                            <div class="mdl-tabs__panel is-active" id="corporations-panel">
+                                <ul class="demo-list-three mdl-list">
+                                <% if (corporations.length) { %>
+                                    <% corporations.forEach(function(item) { %>
+                                    <li class="mdl-list__item mdl-list__item--three-line">
+                                        <span class="mdl-list__item-primary-content">
+                                            <img class="material-icons mdl-list__item-avatar" src="<%=item.avatar %>">
+                                            <span><%=item.username %>（<%=item.belong %>）</span>
+                                            <span class="mdl-list__item-text-body">
+                                                <%=item.email %>，<%=item.tel %>
+                                            </span>
+                                        </span>
+                                        <span class="mdl-list__item-secondary-content">
+                                            <a class="mdl-list__item-secondary-action" href="/admin/deleteUser/<%=item._id %>/"><i class="material-icons">delete</i></a>
+                                        </span>
+                                    </li>
+                                    <% }) %>
+                                <% } %>
+                                </ul>
+                            </div>
+                            <div class="mdl-tabs__panel" id="students-panel">
+                                <ul class="demo-list-three mdl-list">
+                                <% if (students.length) { %>
+                                    <% students.forEach(function(item) { %>
+                                    <li class="mdl-list__item mdl-list__item--three-line">
+                                        <span class="mdl-list__item-primary-content">
+                                            <img class="material-icons mdl-list__item-avatar" src="<%=item.avatar %>">
+                                            <span><%=item.username %>（<%=item.sex %>）</span>
+                                            <span class="mdl-list__item-text-body">
+                                                <%=item.email %>，<%=item.tel %> 
+                                            </span>
+                                        </span>
+                                        <span class="mdl-list__item-secondary-content">
+                                            <a class="mdl-list__item-secondary-action" href="/admin/deleteUser/<%=item._id %>/"><i class="material-icons">delete</i></a>
+                                        </span>
+                                    </li>
+                                    <% }) %>
+                                <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+<% include ../footer.html %>
