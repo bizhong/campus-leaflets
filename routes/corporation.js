@@ -18,4 +18,5 @@ module.exports = function (router) {
     router.get('/corporation/', corporationIndex.index);
 
     // 发布传单
+    
 };
