@@ -165,7 +165,7 @@
 - 克隆项目（Git Bash）
 
 ```git
-git clone https://github.com/basfed/campus-leaflets.git
+git clone https://github.com/bizhong/campus-leaflets.git
 ```
 
 - 启动 MongoDB 数据库（命令提示符（CMD））
@@ -222,18 +222,18 @@ node --harmony app
 校园传单（Campus Leaflets）归兰必钟一人所有。
 
   [1]: https://getmdl.io/
-  [3]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-login.gif
-  [4]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-login.gif
-  [5]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-login.gif
-  [6]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/nav.png
-  [8]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-logout.gif
-  [10]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-register.gif
-  [11]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-register-succeed.png
-  [12]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/corporation-register-failed.png
-  [15]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes.gif
-  [16]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes-email.png
-  [17]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no.gif
-  [18]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no-email.png
-  [19]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/admin-user-management.gif
-  [21]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-register-succeed.gif
-  [22]: https://github.com/basfed/campus-leaflets/blob/master/screenshot/student-register-failed.png
+  [3]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/student-login.gif
+  [4]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-login.gif
+  [5]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-login.gif
+  [6]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/nav.png
+  [8]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-logout.gif
+  [10]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-register.gif
+  [11]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-register-succeed.png
+  [12]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-register-failed.png
+  [15]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes.gif
+  [16]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes-email.png
+  [17]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no.gif
+  [18]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no-email.png
+  [19]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-user-management.gif
+  [21]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/student-register-succeed.gif
+  [22]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/student-register-failed.png
