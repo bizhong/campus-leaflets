@@ -1,6 +1,6 @@
-# 校园传单（Campus Leaflets）
+# 校园传单
 
-校园传单是一个使用 Node.js、MongoDB、Koa、EJS、MDL、Less、RequireJS 和 Gulp 开发的 Node 应用程序。
+校园传单（Campus Leaflets）是一个使用 Node.js、MongoDB、Koa、EJS、MDL、Less、RequireJS 和 Gulp 开发的 Node 应用程序。
 
 ## 目录
 
@@ -219,21 +219,21 @@ node --harmony app
 
 ## 版权声明
 
-校园传单（Campus Leaflets）归兰必钟一人所有。
+© 2016 Campus Leaflets. Made by Bizhong Lan.
 
   [1]: https://getmdl.io/
-  [3]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/student-login.gif
-  [4]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-login.gif
-  [5]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-login.gif
-  [6]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/nav.png
-  [8]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-logout.gif
-  [10]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-register.gif
-  [11]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-register-succeed.png
-  [12]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/corporation-register-failed.png
-  [15]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes.gif
-  [16]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-yes-email.png
-  [17]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no.gif
-  [18]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-verifycorporation-no-email.png
-  [19]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/admin-user-management.gif
-  [21]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/student-register-succeed.gif
-  [22]: https://github.com/bizhong/campus-leaflets/blob/master/screenshot/student-register-failed.png
+  [3]: https://github.com/bizhong/images/blob/master/campus-leaflets/student-login.gif
+  [4]: https://github.com/bizhong/images/blob/master/campus-leaflets/corporation-login.gif
+  [5]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-login.gif
+  [6]: https://github.com/bizhong/images/blob/master/campus-leaflets/nav.png
+  [8]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-logout.gif
+  [10]: https://github.com/bizhong/images/blob/master/campus-leaflets/corporation-register.gif
+  [11]: https://github.com/bizhong/images/blob/master/campus-leaflets/corporation-register-succeed.png
+  [12]: https://github.com/bizhong/images/blob/master/campus-leaflets/corporation-register-failed.png
+  [15]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-verifycorporation-yes.gif
+  [16]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-verifycorporation-yes-email.png
+  [17]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-verifycorporation-no.gif
+  [18]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-verifycorporation-no-email.png
+  [19]: https://github.com/bizhong/images/blob/master/campus-leaflets/admin-user-management.gif
+  [21]: https://github.com/bizhong/images/blob/master/campus-leaflets/student-register-succeed.gif
+  [22]: https://github.com/bizhong/images/blob/master/campus-leaflets/student-register-failed.png
